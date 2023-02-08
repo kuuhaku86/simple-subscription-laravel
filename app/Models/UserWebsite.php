@@ -14,5 +14,6 @@ class UserWebsite extends Model
     protected $fillable = [
         'user_id',
         'website_id',
+        'last_post_id'
     ];
 }

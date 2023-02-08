@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Post;
 use App\Models\User;
 use App\Models\UserWebsite;
 use App\Models\Website;
@@ -56,6 +57,9 @@ class UserController extends Controller
             ], 400);
         }
 
+
+        $input['last_post_id'] = Post::where('website_id', $input['website_id'])
+            ->max('id') ?? 0;
 
         try {
             UserWebsite::create($input);
