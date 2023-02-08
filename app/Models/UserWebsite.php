@@ -9,6 +9,8 @@ class UserWebsite extends Model
 {
     use HasFactory;
 
+    protected $primaryKey = null;
+    public $incrementing = false;
     protected $table = "user_website";
 
     protected $fillable = [
